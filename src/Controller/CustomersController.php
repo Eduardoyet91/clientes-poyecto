@@ -100,8 +100,22 @@ class CustomersController extends AppController
             $this->Flash->error(__('The customer could not be saved. Please, try again.'));
         }
         $users = $this->Customers->Users->find('list', ['limit' => 200])->all();
-        $groups = $this->Customers->Groups->find('list', ['limit' => 200])->all();
+
+        $user = $this->Authentication->getIdentity();
+        $id=$user->id;
+        $user = $this->Authentication->getIdentity();
+        $id=$user->id;
+
+        
+
+        $groups = $this->Customers->Groups->find('list',[
+            'conditions' => ['Groups.user_id' => $id],
+        ])->all();
+
+
         $this->set(compact('customer', 'users', 'groups'));
+
+
     }
 
     /**

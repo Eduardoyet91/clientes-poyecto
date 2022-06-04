@@ -24,12 +24,12 @@
             <fieldset>
                 <legend><?= __('Edit Customer') ?></legend>
                 <?php
-                    echo $this->Form->control('name');
+                    echo $this->Form->control('name',['label' => 'Nombre:' ]);
                     echo $this->Form->control('apodo');
-                    echo $this->Form->control('email');
+                    echo $this->Form->control('email',['label' => 'Correo:' ]);
                     echo $this->Form->control('direccion');
-                    
-                    echo $this->Form->control('group_id', ['options' => $groups]);
+                    echo $this->Form->control('phone',['label' => 'Telefono:' ]);
+                    echo $this->Form->control('group_id', ['options' => $groups,'label' => 'Seleccione un grupo:']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

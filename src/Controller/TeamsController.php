@@ -90,9 +90,19 @@ class TeamsController extends AppController
             'contain' => ['Users'],
         ]);
 
+       
+
+
+
+
         $user = $this->Authentication->getIdentity();
-        $id=$user->id;
-            if ($team->find == $id)
+        $idf=$user->id;
+
+        $result = $this->Authorization->canResult($team,'edit');
+
+
+
+            if (($team->find == $idf)||($result->getStatus()))
             {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $team = $this->Teams->patchEntity($team, $this->request->getData());
@@ -107,7 +117,7 @@ class TeamsController extends AppController
         $this->set(compact('team', 'users'));
     }
 
-    if ($team->find !== $id)
+    if (($team->find !== $idf)&&(!$result->getStatus()))
             {
 
                 $this->Flash->error('Opcion solo para el Creador de equipo ');
@@ -130,13 +140,21 @@ class TeamsController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
-    {
+    { 
+        
+        
         $this->request->allowMethod(['post', 'delete']);
         $team = $this->Teams->get($id);
 
+       
+
+        
+
         $user = $this->Authentication->getIdentity();
-        $id=$user->id;
-            if ($team->find == $id)
+        $idf=$user->id;
+        $result = $this->Authorization->canResult($team,'delete');
+
+            if (($team->find == $idf)||($result->getStatus()))
             {
         if ($this->Teams->delete($team)) {
             $this->Flash->success(__('  Equipo Eliminado.'));
@@ -146,12 +164,16 @@ class TeamsController extends AppController
 
         return $this->redirect(['action' => 'index']);}
 
-        if ($team->find !== $id)
+        if (($team->find !== $idf)&&(!$result->getStatus()))
         {
 
             $this->Flash->error('No se Borro equipo..Opcion solo para el Creador de equipo ');
             $this->redirect(['controller' => 'teams','action' => 'view',$id]);
         }
+        
+
+
+
 
 
     }

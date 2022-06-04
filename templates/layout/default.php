@@ -46,6 +46,7 @@ $cakeDescription = 'Administrador de clientes';
         <?= $this->Html->link(__('Mis Equipos'), ['controller' => 'Teams', 'action' => 'index']) ?>
         <?= $this->Html->link(__('Mis Grupos'), ['controller' => 'Groups', 'action' => 'index']) ?>
         <?= $this->Html->link(__('Mi Perfil'), ['controller' => 'Users', 'action' => 'view']) ?>
+        <?= $this->Html->link(__('Usuarios Registrados'), ['controller' => 'Users', 'action' => 'index']) ?>
        
         <?= $this->Html->link(__('Logout'), ['controller' => 'Users', 'action' => 'logout']) ?>
         </div>

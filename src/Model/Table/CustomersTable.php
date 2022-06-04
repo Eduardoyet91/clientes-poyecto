@@ -94,6 +94,11 @@ class CustomersTable extends Table
             ->notEmptyString('direccion');
 
         $validator
+            ->integer('phone')
+            ->requirePresence('phone', 'create')
+            ->notEmptyString('phone');
+
+        $validator
             ->integer('user_id')
             ->requirePresence('user_id', 'create')
             ->notEmptyString('user_id');
@@ -102,6 +107,8 @@ class CustomersTable extends Table
             ->integer('group_id')
             ->requirePresence('group_id', 'create')
             ->notEmptyString('group_id');
+
+
 
         return $validator;
     }

@@ -38,6 +38,7 @@ class Customer extends Entity
         'apodo' => true,
         'email' => true,
         'direccion' => true,
+        'phone' => true,
         'created' => true,
         'modified' => true,
         'user_id' => true,

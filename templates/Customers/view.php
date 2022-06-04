@@ -30,6 +30,8 @@
                     <th><?= __('Correo') ?></th>
                     <td><?= h($customer->email) ?></td>
                 </tr>
+                <th><?= __('Telefono') ?></th>
+                    <td><?= h($customer->phone) ?></td>
                 <tr>
                     <th><?= __('Direccion') ?></th>
                     <td><?= h($customer->direccion) ?></td>

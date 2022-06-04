@@ -50,6 +50,7 @@
                             <th><?= __('Apodo') ?></th>
                             <th><?= __('Correo') ?></th>
                             <th><?= __('Direccion') ?></th>
+                            <th><?= __('Telefono') ?></th>
                             <th><?= __('Agregado') ?></th>
                             <th><?= __('Modificado') ?></th>
                            
@@ -63,6 +64,7 @@
                             <td><?= h($customers->apodo) ?></td>
                             <td><?= h($customers->email) ?></td>
                             <td><?= h($customers->direccion) ?></td>
+                            <td><?= h($customers->phone) ?></td>
                             <td><?= h($customers->created) ?></td>
                             <td><?= h($customers->modified) ?></td>
                             

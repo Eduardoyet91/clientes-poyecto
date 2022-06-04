@@ -30,6 +30,7 @@
                     <td><?= h($customer->apodo) ?></td>
                     <td><?= h($customer->email) ?></td>
                     <td><?= h($customer->direccion) ?></td>
+                    <td><?= h($customer->phone) ?></td>
                     <td><?= h($customer->created) ?></td>
                     <td><?= h($customer->modified) ?></td>
                     <td class="actions">

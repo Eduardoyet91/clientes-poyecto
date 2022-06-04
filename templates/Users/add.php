@@ -10,7 +10,7 @@
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('  Usuarios Registrados'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
@@ -22,7 +22,7 @@
                     echo $this->Form->control('name');
                     echo $this->Form->control('email');
                     echo $this->Form->control('password');
-                    echo $this->Form->control('label_id', ['options' => $labels]);
+                    echo $this->Form->control('label_id', ['options' => $labels, 'label'=> ' seleccione : 1= Usuario  2= Administrador' ]);
                     
                 ?>
             </fieldset>

@@ -12,13 +12,14 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
+                   
                     <th><?= $this->Paginator->sort('Nombre') ?></th>
                     <th><?= $this->Paginator->sort('Apodo') ?></th>
-                    <th><?= $this->Paginator->sort('Correo') ?></th>
+                   
                     <th><?= $this->Paginator->sort('direccion') ?></th>
+                   
                     <th><?= $this->Paginator->sort('Agregado') ?></th>
-                    <th><?= $this->Paginator->sort('Modificado') ?></th>
+                   
                     <th><?= $this->Paginator->sort('user_id') ?></th>
                    
                     <th><?= $this->Paginator->sort('group_id') ?></th>
@@ -28,13 +29,14 @@
             <tbody>
                 <?php foreach ($customers as $customer): ?>
                 <tr>
-                    <td><?= $this->Number->format($customer->id) ?></td>
+                    
                     <td><?= h($customer->name) ?></td>
                     <td><?= h($customer->apodo) ?></td>
-                    <td><?= h($customer->email) ?></td>
+                    
                     <td><?= h($customer->direccion) ?></td>
+                    
                     <td><?= h($customer->created) ?></td>
-                    <td><?= h($customer->modified) ?></td>
+                   
                     <td><?= $customer->has('user') ? $this->Html->link($customer->user->id, ['controller' => 'users', 'action' => 'ver', $customer->user->id]) : '' ?></td>
                     <td><?= $customer->has('group') ? $this->Html->link($customer->group->name, ['controller' => 'Groups', 'action' => 'view', $customer->group->id]) : '' ?></td>
                     
